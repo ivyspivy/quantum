@@ -102,3 +102,15 @@ qProgram.compile(circuits, "local_qasm_simulator") # Compile your program
 result = qProgram.run(wait=2, timeout=240)
 
 print(qProgram.get_counts("qCircuit"))
+
+# USE THE BLOCK OF CODE BELOW IF YOU WANT TO RUN ON AN ACTUAL QUANTUM COMPUTER
+# It's cool running on an actual quantum computer, but keep in mind that
+# decoherence and other environmental noise causes error.
+
+# device = 'ibmqx2'   # Backend where you execute your program; in this case, on the Real Quantum Chip online
+# circuits = ["qCircuit"]   # Group of circuits to execute
+# shots = 1024           # Number of shots to run the program (experiment); maximum is 8192 shots.
+# max_credits = 3          # Maximum number of credits to spend on executions.
+
+# result = qProgram.execute(circuits, device, shots, max_credits=3, wait=10, timeout=240)
+# print(qProgram.get_counts("Circuit"))
